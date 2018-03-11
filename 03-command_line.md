@@ -70,7 +70,11 @@ ls -1: Displays each entry on a line
 
 What does `xargs` do? Give an example of how to use it.
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+The xargs command in UNIX is a command line utility for building an execution pipeline from standard input. Using xargs allows tools like echo and rm and mkdir to accept standard input as arguments. xargs reads items from standard input as separated by blanks and executes a command once for each argument.
 
+Here's an example:  
+echo 'one two three' | xargs mkdir  
+ls  
+one two three  
  
 
