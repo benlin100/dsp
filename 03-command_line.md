@@ -44,7 +44,13 @@ What do the following commands do:
 `ls -t`  
 `ls -Glp`  
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+`ls`: lists all files and directories in the working directory.  
+`ls -a` : The -a modifies the behavior of the ls command to also list the files and directories starting with a dot (.). Files started with a dot are hidden, and don't appear when using ls alone.  
+`ls -l` : lists files and directories as a table with descriptions about each file/directory.  
+`ls -lh`: list long format with readable file size  
+`ls -lah`: list long format including hidden files & readable file size  
+`ls -t` : sorts entries by time. By default, this option sorts the output by the modification times of files.  
+`ls -Glp`: provides a detailed chart of each section of my Benjamin profile on my laptop  
 
 ---
 
