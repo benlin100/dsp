@@ -20,7 +20,16 @@ Here's a list of items with which you should be familiar:
 
 Make a cheat sheet for yourself: a list of at least **ten** commands and what they do.  (Use the 8 items above and add a couple of your own.)  
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+* show current working directory path = pwd = it prints the path of the working directory you're on  
+* creating a directory = mkdir [directory name]: It takes in a directory name as an argument, and then creates a new directory in the current working directory  
+* deleting a directory = rm -r [directory name]: Delets a directory and all of its children directories  
+* creating a file using `touch` command = touch [file name]: takes in a filename as an argument, and then creates an empty file in the current working directory  
+* deleting a file = rm [file name]: deletes the file from the filesystem  
+* renaming a file = mv [file name1] [file name2]: renames a file; we rename the first file with the name we listed in the second file  
+* listing hidden files = ls -a: command lists all files and directories in the working directory, including hidden files and directories  
+* copying a file from one directory to another = mv [file name] [directory name]: moves the file into the directory  
+* how to go back one path step = cd.. : moves back on step on your path  
+* how to go one further on the path = cd [file/directory name] : allows you to enter more files and or directories  
 
 ---
 
