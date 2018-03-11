@@ -58,7 +58,11 @@ What do the following commands do:
 
 Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) and pick 5 of your favorites:
 
-> > REPLACE THIS TEXT WITH YOUR RESPONSE
+ls -c: Displays files by file timestamp.
+ls -d: Displays only dictionaries
+ls -r: displays files in reverse order
+ls -R: Displays subdirectories as well.
+ls -1: Displays each entry on a line
 
 ---
 
