@@ -5,6 +5,7 @@ Please follow and complete the free online [Bash Scripting Tutorial](https://rya
 **Note:** Bash is not installed on a PC. Rather, PC users must install Cygwin. Once Cygwin has been installed, the command line interface witll _emulate_ bash. You can find all information regarding Cygwin [here](https://www.cygwin.com/).
 
 ---
+My Answers:  
 
 ### Q1.  Cheat Sheet of Commands  
 
