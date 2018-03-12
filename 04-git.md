@@ -1,5 +1,5 @@
 # Using Git at Command Line
-hi, my name is Ben :) 
+hi, my name is Ben and this is my terminal test!
 
 
 ## :boom: Git 10-minute Video :boom: 
