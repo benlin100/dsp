@@ -1,4 +1,6 @@
 # Using Git at Command Line
+hi, my name is Ben :) 
+
 
 ## :boom: Git 10-minute Video :boom: 
 
