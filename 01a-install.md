@@ -44,6 +44,7 @@ For users who are already familiar with package managers, you may prefer to inst
 However, this is completely optional as Anaconda is an all-in-one package manager.
 
 ---
+My Answers:  
 
 ### Q1. Python Version 2 or 3
 
