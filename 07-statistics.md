@@ -105,6 +105,9 @@ My answers:
 7.325855614973262
 -0.088672927072602
 
+According to the calculations, non-newborn babies are born a little heavier than first born babies (appx: .124 lbs heavier). Cohen's D is about -0.0887 (the - sign means that we see an increase in weight from group 1 (firstborn) to group 2 (non firstborn). A value of ~0.09 is relatively very low so it most likely has a small effect size. We can compare this to the effect size of mean pregnancy length which was 0.029. So the effect size for weight is relatively larger than the effect size for length, but the effect size overall for both is still small.   
+
+
 ### Q2. [Think Stats Chapter 3 Exercise 1](statistics/3-1-actual_biased.md) (actual vs. biased)
 This problem presents a robust example of actual vs biased data.  As a data scientist, it will be important to examine not only the data that is available, but also the data that may be missing but highly relevant.  You will see how the absence of this relevant data will bias a dataset, its distribution, and ultimately, its statistical interpretation.
 
