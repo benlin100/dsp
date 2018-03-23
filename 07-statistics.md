@@ -111,7 +111,7 @@ Cohen's d = -0.088672927072602
 
 According to the calculations, non-newborn babies are born a little heavier than first born babies (appx: .124 lbs heavier). Cohen's D is about -0.0887 (the - sign means that we see an increase in weight from group 1 (firstborn) to group 2 (non firstborn). A value of ~0.09 is relatively very low so it most likely has a small effect size. We can compare this to the effect size of mean pregnancy length which was 0.029. So the effect size for weight is relatively larger than the effect size for length, but the effect size overall for both is still small.
 
-
+::smiley::
 
 
 
