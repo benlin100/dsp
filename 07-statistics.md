@@ -67,48 +67,6 @@ $ git clone https://github.com/AllenDowney/ThinkStats2.git
 ### Q1. [Think Stats Chapter 2 Exercise 4](statistics/2-4-cohens_d.md) (effect size of Cohen's d)  
 Cohen's D is an example of effect size.  Other examples of effect size are:  correlation between two variables, mean difference, regression coefficients and standardized test statistics such as: t, Z, F, etc. In this example, you will compute Cohen's D to quantify (or measure) the difference between two groups of data.   
 
-This is my Python Code:  
-#read the data file and and create a new dataset, live, that only has live birth data 
-preg = ReadFemPreg()
-live = preg[preg.outcome == 1] 
-
-#split my dataset into 2 groups - firstborn and not firstborn
-firsts = live[live.birthord == 1]
-others = live[live.birthord != 1]
-
-#Created two Hist objects with respect to totalwgt_lb
-firstborn_weight = thinkstats2.Hist(firsts.totalwgt_lb)
-others_weight = thinkstats2.Hist(others.totalwgt_lb)
-
-#graph the histogram
-width = 0.05
-thinkplot.PrePlot(2)
-thinkplot.Hist(firstborn_weight, align='left', width=width)
-thinkplot.Hist(others_weight, align='right', width=width)
-thinkplot.Show(xlabel='lbs', ylabel='frequency', xlim=[2, 12])
-
-#hard to deduce from histogram, now calculate the mean and variance
-first_mean = firsts.totalwgt_lb.mean()
-other_mean = others.totalwgt_lb.mean()
-first_var = firsts.totalwgt_lb.var()
-other_var = others.totalwgt_lb.var()
-print(first_mean)
-print(other_mean) ###non-newborn babies are born a little heavier than first born (appx: .124 lbs heavier)
-
-#now calculate Cohen's d: 
-group1 = firsts.totalwgt_lb
-group2 = others.totalwgt_lb
-print(CohenEffectSize(group1, group2))
-
-
-My answers:  
-7.201094430437772  
-7.325855614973262
--0.088672927072602
-
-According to the calculations, non-newborn babies are born a little heavier than first born babies (appx: .124 lbs heavier). Cohen's D is about -0.0887 (the - sign means that we see an increase in weight from group 1 (firstborn) to group 2 (non firstborn). A value of ~0.09 is relatively very low so it most likely has a small effect size. We can compare this to the effect size of mean pregnancy length which was 0.029. So the effect size for weight is relatively larger than the effect size for length, but the effect size overall for both is still small.   
-
-
 ### Q2. [Think Stats Chapter 3 Exercise 1](statistics/3-1-actual_biased.md) (actual vs. biased)
 This problem presents a robust example of actual vs biased data.  As a data scientist, it will be important to examine not only the data that is available, but also the data that may be missing but highly relevant.  You will see how the absence of this relevant data will bias a dataset, its distribution, and ultimately, its statistical interpretation.
 
