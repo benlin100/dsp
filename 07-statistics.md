@@ -68,26 +68,26 @@ $ git clone https://github.com/AllenDowney/ThinkStats2.git
 Cohen's D is an example of effect size.  Other examples of effect size are:  correlation between two variables, mean difference, regression coefficients and standardized test statistics such as: t, Z, F, etc. In this example, you will compute Cohen's D to quantify (or measure) the difference between two groups of data.   
 
 This is my Python Code:  
-###read the data file and and create a new dataset, live, that only has live birth data 
+#read the data file and and create a new dataset, live, that only has live birth data 
 preg = ReadFemPreg()
 live = preg[preg.outcome == 1] 
 
-###split my dataset into 2 groups - firstborn and not firstborn
+#split my dataset into 2 groups - firstborn and not firstborn
 firsts = live[live.birthord == 1]
 others = live[live.birthord != 1]
 
-###Created two Hist objects with respect to totalwgt_lb
+#Created two Hist objects with respect to totalwgt_lb
 firstborn_weight = thinkstats2.Hist(firsts.totalwgt_lb)
 others_weight = thinkstats2.Hist(others.totalwgt_lb)
 
-###graph the histogram
+#graph the histogram
 width = 0.05
 thinkplot.PrePlot(2)
 thinkplot.Hist(firstborn_weight, align='left', width=width)
 thinkplot.Hist(others_weight, align='right', width=width)
 thinkplot.Show(xlabel='lbs', ylabel='frequency', xlim=[2, 12])
 
-###hard to deduce from histogram, now calculate the mean and variance
+#hard to deduce from histogram, now calculate the mean and variance
 first_mean = firsts.totalwgt_lb.mean()
 other_mean = others.totalwgt_lb.mean()
 first_var = firsts.totalwgt_lb.var()
@@ -95,10 +95,11 @@ other_var = others.totalwgt_lb.var()
 print(first_mean)
 print(other_mean) ###non-newborn babies are born a little heavier than first born (appx: .124 lbs heavier)
 
-###now calculate Cohen's d: 
+#now calculate Cohen's d: 
 group1 = firsts.totalwgt_lb
 group2 = others.totalwgt_lb
 print(CohenEffectSize(group1, group2))
+
 
 My answers:  
 7.201094430437772  
