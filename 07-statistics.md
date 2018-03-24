@@ -134,7 +134,9 @@ thinkplot.Pmfs([actual_pmf, bias_pmf])
 thinkplot.Show(xlabel='num_of_children', ylabel='PMF')  
 
 ![Plots of Both Distributions]
-(https://github.com/benlin100/dsp/blob/master/ben.png)
+(https://github.com/benlin100/dsp/blob/master/ben.png)  
+actual_mean = 1.02420515504  
+biased_mean = 2.40367910066  
 
 The results show that, in the biased distribution there is a much higher probability to have a higher number of children than lower. The   mean of the biased distribution is 2.4, more than 50% higher thin the actual mean.   
 
