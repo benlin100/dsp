@@ -143,6 +143,25 @@ The results show that, in the biased distribution there is a much higher probabi
 ### Q3. [Think Stats Chapter 4 Exercise 2](statistics/4-2-random_dist.md) (random distribution)  
 This questions asks you to examine the function that produces random numbers.  Is it really random?  A good way to test that is to examine the pmf and cdf of the list of random numbers and visualize the distribution.  If you're not sure what pmf is, read more about it in Chapter 3.  
 
+Here's my code:  
+t = np.random.random(size = 1000)  
+
+#pmf  
+pmf = thinkstats2.Pmf(t)  
+thinkplot.Pmf(pmf, linewidth = 0.1)  
+thinkplot.Show(xlabel='value')  
+
+#cdf  
+cdf = thinkstats2.Cdf(t)  
+thinkplot.Cdf(cdf)  
+thinkplot.Show(xlabel='value', ylabel='CDF')  
+
+Yes, it really is random. From the pmf, we can see that regardless of what the value is, their probabilties are all set to 0.001. Each value in the range has an equal chance of showing up. Now looking at the CDF, we see the same results. The CDF shows a diagonal line that looks to have an approximate slope of 1. This means that percentile rank is going to follow a uniform distribution and that the model is going to assume that every value from 0 to 1 is going to have the same likelihood. For example, if you choose a value of 0.5, because all the values have the same probablitiy, we can expect that 0.5 has a percentile rank of 50%. Same with 0.1, we an expect 0.1 to have a percentile rank of 10%. 
+
+
+
+
+
 ### Q4. [Think Stats Chapter 5 Exercise 1](statistics/5-1-blue_men.md) (normal distribution of blue men)
 This is a classic example of hypothesis testing using the normal distribution.  The effect size used here is the Z-statistic. 
 
