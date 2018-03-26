@@ -165,6 +165,23 @@ Yes, it really is random. From the pmf, we can see that regardless of what the v
 ### Q4. [Think Stats Chapter 5 Exercise 1](statistics/5-1-blue_men.md) (normal distribution of blue men)
 This is a classic example of hypothesis testing using the normal distribution.  The effect size used here is the Z-statistic. 
 
+To start, I created a normal distribution with scipy.stats.norm with the mean of 178 and SD of 7.7. Now I just used the Cdf function to calculate the percentile rank of the heights of both 5'10 and 6'1. I then subtracted the two values to get the approximate percentage of the population that is between the listed heights.  
+
+Here is my code:  
+
+import scipy.stats  
+height = scipy.stats.norm(loc=178, scale=7.7) #created the normal distribution  
+height.cdf(177.8) #calculated the percentile rank of 5'10  
+
+  
+height.cdf(185.42) #calculated the percentile rank of 6'1  
+
+height.cdf(185.42) - height.cdf(177.8) #subtracted the two percentile ranks together  
+
+The answer is ~34% of the male population has a height between 5'10 and 6'1. 
+
+
+
 
 
 ### Q5. Bayesian (Elvis Presley twin) 
