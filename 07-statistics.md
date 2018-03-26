@@ -199,7 +199,9 @@ So I calculated the likelihood that his twin brother was a male and it was an id
 ### Q6. Bayesian &amp; Frequentist Comparison  
 How do frequentist and Bayesian statistics compare?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+From my understanding, frequentist statistics believe probabilities represent long run frequencies with which events occur. They also believe that sampling is infinite and decision rules can be sharp. Data are a repeatable random sample - there is a frequency!  
+
+On the other hand, inference is a method of statistical inference in which Bayes' theorem is used to update the probability for a hypothesis as more evidence or information becomes available. Bayesian Statitics also takes into account previous evidence that the individual has experienced/seen and takes that into account. 
 
 ---
 
