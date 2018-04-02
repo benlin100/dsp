@@ -111,18 +111,76 @@ Cohen's d = -0.088672927072602
 
 According to the calculations, non-newborn babies are born a little heavier than first born babies (appx: .124 lbs heavier). Cohen's D is about -0.0887 (the - sign means that we see an increase in weight from group 1 (firstborn) to group 2 (non firstborn). A value of ~0.09 is relatively very low so it most likely has a small effect size. We can compare this to the effect size of mean pregnancy length which was 0.029. So the effect size for weight is relatively larger than the effect size for length, but the effect size overall for both is still small.
 
-::smiley::
-
-
 
 ### Q2. [Think Stats Chapter 3 Exercise 1](statistics/3-1-actual_biased.md) (actual vs. biased)
 This problem presents a robust example of actual vs biased data.  As a data scientist, it will be important to examine not only the data that is available, but also the data that may be missing but highly relevant.  You will see how the absence of this relevant data will bias a dataset, its distribution, and ultimately, its statistical interpretation.
 
+  
+resp = nsfg.ReadFemResp()  
+resp.numkdhh  
+#actual  
+actual_pmf = thinkstats2.Pmf(resp.numkdhh, label='actual')  
+mean = actual_pmf.Mean()  
+print(mean)  
+
+#biased  
+bias_pmf = BiasPmf(actual_pmf, label='biased')  
+biased_mean = bias_pmf.Mean()  
+print(biased_mean)  
+
+#plot both distributions  
+thinkplot.PrePlot(2)  
+thinkplot.Pmfs([actual_pmf, bias_pmf])  
+thinkplot.Show(xlabel='num_of_children', ylabel='PMF')  
+
+![Plots of Both Distributions]
+(https://github.com/benlin100/dsp/blob/master/ben.png)  
+actual_mean = 1.02420515504  
+biased_mean = 2.40367910066  
+
+The results show that, in the biased distribution there is a much higher probability to have a higher number of children than lower. The   mean of the biased distribution is 2.4, more than 50% higher thin the actual mean.   
+
 ### Q3. [Think Stats Chapter 4 Exercise 2](statistics/4-2-random_dist.md) (random distribution)  
 This questions asks you to examine the function that produces random numbers.  Is it really random?  A good way to test that is to examine the pmf and cdf of the list of random numbers and visualize the distribution.  If you're not sure what pmf is, read more about it in Chapter 3.  
 
+Here's my code:  
+t = np.random.random(size = 1000)  
+
+#pmf  
+pmf = thinkstats2.Pmf(t)  
+thinkplot.Pmf(pmf, linewidth = 0.1)  
+thinkplot.Show(xlabel='value')  
+
+#cdf  
+cdf = thinkstats2.Cdf(t)  
+thinkplot.Cdf(cdf)  
+thinkplot.Show(xlabel='value', ylabel='CDF')  
+
+Yes, it really is random. From the pmf, we can see that regardless of what the value is, their probabilties are all set to 0.001. Each value in the range has an equal chance of showing up. Now looking at the CDF, we see the same results. The CDF shows a diagonal line that looks to have an approximate slope of 1. This means that percentile rank is going to follow a uniform distribution and that the model is going to assume that every value from 0 to 1 is going to have the same likelihood. For example, if you choose a value of 0.5, because all the values have the same probablitiy, we can expect that 0.5 has a percentile rank of 50%. Same with 0.1, we an expect 0.1 to have a percentile rank of 10%. 
+
+
+
+
+
 ### Q4. [Think Stats Chapter 5 Exercise 1](statistics/5-1-blue_men.md) (normal distribution of blue men)
 This is a classic example of hypothesis testing using the normal distribution.  The effect size used here is the Z-statistic. 
+
+To start, I created a normal distribution with scipy.stats.norm with the mean of 178 and SD of 7.7. Now I just used the Cdf function to calculate the percentile rank of the heights of both 5'10 and 6'1. I then subtracted the two values to get the approximate percentage of the population that is between the listed heights.  
+
+Here is my code:  
+
+import scipy.stats  
+height = scipy.stats.norm(loc=178, scale=7.7) #created the normal distribution  
+height.cdf(177.8) #calculated the percentile rank of 5'10  
+
+  
+height.cdf(185.42) #calculated the percentile rank of 6'1  
+
+height.cdf(185.42) - height.cdf(177.8) #subtracted the two percentile ranks together  
+
+The answer is ~34% of the male population has a height between 5'10 and 6'1. 
+
+
 
 
 
@@ -132,14 +190,18 @@ Bayes' Theorem is an important tool in understanding what we really know, given 
 
 Elvis Presley had a twin brother who died at birth.  What is the probability that Elvis was an identical twin? Assume we observe the following probabilities in the population: fraternal twin is 1/125 and identical twin is 1/300.  
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+The answer is 5/11. This is how I got to that conclusion:  
+
+So I calculated the likelihood that his twin brother was a male and it was an identical twin. So first, I made the two probablities equivalent with the same denominator. So for identity, it is 10/3000 (10 twin babies for 3000 births. And for fraternal, 125/3000 (125 fraternal twins for 3000 babies. So we can assume that for the twins, half are going to be girls and half will be boys. We already know the deceased baby is a boy, so that value is 5. Now, we look at fraternal. There are 4 different possible combinations of boy/girl, so the possibility of having a boy-boy is 6/24. So in total, there are 11 chances that he had a twin brother. But we already knew that. The question then lies as to whether the boy was a fraternal or identical twin. In this case, that probability is 5/11. 
 
 ---
 
 ### Q6. Bayesian &amp; Frequentist Comparison  
 How do frequentist and Bayesian statistics compare?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+From my understanding, frequentist statistics believe probabilities represent long run frequencies with which events occur. They also believe that sampling is infinite and decision rules can be sharp. Data are a repeatable random sample - there is a frequency!  
+
+On the other hand, inference is a method of statistical inference in which Bayes' theorem is used to update the probability for a hypothesis as more evidence or information becomes available. Bayesian Statitics also takes into account previous evidence that the individual has experienced/seen and takes that into account. 
 
 ---
 
